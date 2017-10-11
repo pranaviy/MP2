@@ -89,7 +89,7 @@ class Home extends React.Component {
                         <div id = 'sortbut'>
                             <Button floated='right' onClick={(e) => this.updateSearch()}> Sort Results </Button>
                         </div>
-                        <ViewButtons ref = 'viewopt' type = 'text'/>
+                        <ViewButtons ref = 'viewopt' type = 'text' onClick={(e) => this.updateSearch()}/>
                     </Form>
                 </div>
                 
@@ -98,15 +98,15 @@ class Home extends React.Component {
                         {this.state.view === 'list' ? (                    
                             this.state.movies.map(function(movie){
                                 return <div key={movie.id} className="listresult">
-                                    <div key={movie.poster_path} className= "movieposter">
+                                    <div key={movie.id} className= "movieposter">
                                         <img src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} alt={'No Image Available for "' + movie.title + '"'}/>
                                     </div>
-                                    <div key={movie.title} className = "moviedetails">
-                                        <Header className = "movietitle" as='h3'>{movie.title}</Header>
-                                        <Header className = "moviemeta" as='h5'> Released: {movie.release_date}</Header>
-                                        <Header className = "moviemeta" as='h5'> User rating: {movie.vote_average} </Header>
+                                    <div className = "moviedetails">
+                                        <Header key={movie.title} className = "movietitle" as='h3'>{movie.title}</Header>
+                                        <Header key={movie.release_date} className = "moviemeta" as='h5'> Released: {movie.release_date}</Header>
+                                        <Header key={movie.vote_average} className = "moviemeta" as='h5'> User rating: {movie.vote_average} </Header>
                                         <br/>
-                                        <Header className = "movieoverview" as='h5'> {movie.overview} </Header>
+                                        <Header key={movie.overview} className = "movieoverview" as='h5'> {movie.overview} </Header>
                                     </div>
                                     <Divider hidden />
                                 </div>
@@ -115,8 +115,8 @@ class Home extends React.Component {
                         //gallery view                
                         this.state.movies.map(function(movie){
                                 return <div key={movie.id} className="galleryresult">
-                                    <div key={movie.poster_path} className = "movieposter">
-                                        <img src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} alt={'No Image Available for "' + movie.title + '"'}/>
+                                    <div key={movie.id} className = "movieposter">
+                                        <img src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} key={movie.id} alt={'No Image Available for "' + movie.title + '"'}/>
                                     </div>
                                 </div>
                             }) 
