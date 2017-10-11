@@ -5,9 +5,6 @@ export default class ViewButtons extends React.Component {
     
     constructor(props) {
         super(props);
-        this.options = [
-                {value:'asc', text:'Ascending'},
-                {value:'des', text:'Descending'},];
         this.state = {
             selected: ""
         };
@@ -24,6 +21,7 @@ export default class ViewButtons extends React.Component {
             <div className = "viewbuttons">
                 <Button onClick={(e) => this.setState({selected: 'list'})}>List View</Button>
                 <Button onClick={(e) => this.setState({selected: 'gallery'})}>Gallery View</Button>
+                <Button onClick={(e) => this.setState({selected: 'detail'})}>Detail View</Button>
             </div>
         );
     }

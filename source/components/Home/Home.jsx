@@ -97,11 +97,11 @@ class Home extends React.Component {
                     <div>
                         {this.state.view === 'list' ? (                    
                             this.state.movies.map(function(movie){
-                                return <div className="listresult">
-                                    <div className = "movieposter">
+                                return <div key={movie.id} className="listresult">
+                                    <div key={movie.poster_path} className= "movieposter">
                                         <img src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} alt={'No Image Available for "' + movie.title + '"'}/>
                                     </div>
-                                    <div className = "moviedetails">
+                                    <div key={movie.title} className = "moviedetails">
                                         <Header className = "movietitle" as='h3'>{movie.title}</Header>
                                         <Header className = "moviemeta" as='h5'> Released: {movie.release_date}</Header>
                                         <Header className = "moviemeta" as='h5'> User rating: {movie.vote_average} </Header>
@@ -111,15 +111,16 @@ class Home extends React.Component {
                                     <Divider hidden />
                                 </div>
                             })
-                        ) :
+                        ) : this.state.view === 'gallery' ? (
                         //gallery view                
                         this.state.movies.map(function(movie){
-                            return <div className="galleryresult">
-                                <div className = "movieposter">
-                                    <img src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} alt={'No Image Available for "' + movie.title + '"'}/>
+                                return <div key={movie.id} className="galleryresult">
+                                    <div key={movie.poster_path} className = "movieposter">
+                                        <img src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} alt={'No Image Available for "' + movie.title + '"'}/>
+                                    </div>
                                 </div>
-                            </div>
-                        })
+                            }) 
+                        ) : null
                         }
                     </div>
                 }
