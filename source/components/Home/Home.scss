@@ -1,0 +1,86 @@
+.Home {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+#welcometitle {
+    text-align: center;
+    margin-bottom: 1vh; 
+}
+
+.topPortion {
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2vh;
+    display: block;
+    border: solid 3px;
+    border-radius: 10px;
+    padding: 3vh 1vw;
+}
+
+#sorttitle {
+    margin: 0;
+}
+
+#sortbut {
+    width: inherit;
+    display: block;
+    margin-bottom: 6vh;
+}
+
+#viewbuttons {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bottomPortion {
+    margin: 0 auto;
+    display: block;
+}
+
+.listresult {
+    padding: 2vh 1vw;
+    display: flex;
+    height: flex;
+    margin: 0 auto;
+}
+
+.movieposter img {
+    width: 10vw;
+    float: left;
+    margin-right: 2vw;
+}
+
+.moviedetails {
+    .movietitle {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .moviemeta {
+        margin: 0;
+        padding: 0;
+        font-style: italic;
+        font-weight: 100;
+    }
+    
+    .movieoverview {
+        margin: 0;
+        padding: 0;
+        font-weight: 100;
+    }
+}
+
+.galleryresult {
+    display: inline;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    align-content: space-around;
+    
+    img {
+        height: 20vh;
+    }
+}
